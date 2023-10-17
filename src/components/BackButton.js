@@ -1,13 +1,15 @@
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native'
+import { TouchableOpacity, StyleSheet } from 'react-native'
 import React from 'react'
-import Setting from '../assets/images/setting.svg'
+import Back from '../assets/images/arrow-back.svg'
 import { screenWidth } from '../utils/AppDimensions'
 import colors from '../utils/Color'
 
-const SettingButton = (props) => {
+const BackButton = (props) => {
     return (
-        <TouchableOpacity style={[styles.container, { ...props }]}>
-            <Setting height="100%" />
+        <TouchableOpacity
+            onPress={() => props.navigation.goBack()}
+            style={styles.container}>
+            <Back height="100%" />
         </TouchableOpacity>
     )
 }
@@ -23,4 +25,4 @@ const styles = StyleSheet.create({
         borderColor: '#3F2A56'
     }
 })
-export default SettingButton
+export default BackButton
